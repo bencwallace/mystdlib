@@ -8,22 +8,21 @@
 template <typename T>
 class LinkedList {
 private:
-    class Node {
-    private:
-        T value_;
-    public:
-        Node *next = nullptr;
+    struct Node {
+        T value;
+        Node *next;
 
         Node(const T &value, Node *next = nullptr);
-
-        T &value();
-        void set(const T &value);
+        Node(const Node &other);
     };
 
-    int size_ = 0;
-    Node *head = nullptr;
+    int size_;
+    Node *head;
 
 public:
+    LinkedList();
+    LinkedList(const LinkedList<T> &other);
+
     size_t size() const;
     void insert(size_t i, const T &value);
 
