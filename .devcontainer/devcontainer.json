@@ -11,7 +11,7 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"editor.formatOnSave": false,	// see https://code.visualstudio.com/docs/cpp/cpp-ide#_code-formatting
-		"C_Cpp.default.includePath": ["//root/miniconda3/include/python3.7m"]
+		"C_Cpp.default.includePath": []
 	},
 
 
