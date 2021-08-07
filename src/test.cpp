@@ -11,5 +11,10 @@ int main() {
     assert(list.size() == 1);
     assert(list.first() == x1);
 
+    int x2 = 24;
+    list.setFirst(x2);
+    assert(list.size() == 1);
+    assert(list.first() == x2);
+
     return 0;
 }

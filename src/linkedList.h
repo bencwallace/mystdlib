@@ -13,8 +13,9 @@ private:
         T value_;
         Node *next = nullptr;
     public:
-        Node(const T &value, Node *next);
+        Node(const T &value, Node *next = nullptr);
         const T &value() const;
+        void set(const T &value);
     };
 
     int size_ = 0;
@@ -22,8 +23,9 @@ private:
 
 public:
     size_t size() const;
-    void prepend(const T &item);
+    void prepend(const T &value);
     const T &first() const;
+    void setFirst(const T &value);
 };
 
 #include "linkedList.tpp"
