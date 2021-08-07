@@ -11,7 +11,10 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"editor.formatOnSave": false,	// see https://code.visualstudio.com/docs/cpp/cpp-ide#_code-formatting
-		"C_Cpp.default.includePath": []
+		"C_Cpp.default.includePath": [],
+		"files.associations": {
+			"*.tpp": "cpp",
+		},
 	},
 
 
