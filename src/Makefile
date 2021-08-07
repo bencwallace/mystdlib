@@ -5,7 +5,7 @@ SRCDIR=src
 CCFLAGS=-I.
 DEPS = *.h *.tpp
 
-OBJS = linkedList.o test.o
+OBJS = list.o test.o
 
 all: $(OBJS)
 	$(CC) $(CCFLAGS) -o test $(OBJS)

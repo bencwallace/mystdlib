@@ -1,6 +1,6 @@
 #include <cassert>
 
-#include "linkedList.h"
+#include "list.h"
 
 int main() {
     LinkedList<int> list;

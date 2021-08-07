@@ -28,6 +28,6 @@ public:
     void setFirst(const T &value);
 };
 
-#include "linkedList.tpp"
+#include "list.tpp"
 
 #endif
