@@ -25,7 +25,7 @@ private:
 
 public:
     size_t size() const;
-    void prepend(const T &value);
+    void insert(size_t i, const T &value);
 
     T &operator[](size_t i);
 };
