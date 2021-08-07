@@ -8,7 +8,7 @@ void LinkedList<T>::Node::set(const T &value) {
 }
 
 template <typename T>
-const T &LinkedList<T>::Node::value() const {
+T &LinkedList<T>::Node::value() {
     return value_;
 }
 
@@ -24,13 +24,11 @@ void LinkedList<T>::prepend(const T &value) {
 }
 
 template <typename T>
-const T &LinkedList<T>::first() const {
-    return head->value();
-}
-
-template <typename T>
-void LinkedList<T>::setFirst(const T& value) {
-    if (head == nullptr)
-        head = new Node(value);
-    head->set(value);
+T& LinkedList<T>::operator[](size_t i) {
+    if (i >= size_)
+        throw "List size exceeded.";
+    Node *node = head;
+    for (int j = 0; j < i; j++)
+        node = node->next;
+    return node->value();
 }

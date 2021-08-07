@@ -3,7 +3,7 @@
 
 // todo: make namespace to avoid possible clashes with std
 // todo: come up with a better definition
-#define size_t int
+#define size_t unsigned int
 
 template <typename T>
 class LinkedList {
@@ -11,10 +11,12 @@ private:
     class Node {
     private:
         T value_;
-        Node *next = nullptr;
     public:
+        Node *next = nullptr;
+
         Node(const T &value, Node *next = nullptr);
-        const T &value() const;
+
+        T &value();
         void set(const T &value);
     };
 
@@ -24,8 +26,8 @@ private:
 public:
     size_t size() const;
     void prepend(const T &value);
-    const T &first() const;
-    void setFirst(const T &value);
+
+    T &operator[](size_t i);
 };
 
 #include "list.tpp"
