@@ -4,6 +4,7 @@ Learning C++ by implementing parts of std.
 
 ## To do
 
-**Bugs**
+**Tasks**
 
-* Segfault in `Node` copy constructor
+* Write `String` to `Stream` by overloading `<<`
+* Add smart pointers
