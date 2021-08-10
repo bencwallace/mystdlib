@@ -1,6 +1,8 @@
 #ifndef MYSTD_LIST_H
 #define MYSTD_LIST_H
 
+namespace mystd {
+
 // todo: make namespace to avoid possible clashes with std
 // todo: come up with a better definition
 #define size_t unsigned int
@@ -30,5 +32,7 @@ public:
 };
 
 #include "list.tpp"
+
+}
 
 #endif

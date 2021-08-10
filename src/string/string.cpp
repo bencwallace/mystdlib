@@ -1,5 +1,7 @@
 #include "string.h"
 
+using mystd::String;
+
 int main() {
     String s0;              // default constructor
     String s1(1, "h");      // construct from array

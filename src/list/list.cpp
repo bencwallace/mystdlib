@@ -3,6 +3,8 @@
 
 #include "list.h"
 
+using mystd::List;
+
 int main() {
     List<int> list;
     assert(list.size() == 0);

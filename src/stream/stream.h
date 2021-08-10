@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <unistd.h>
 
+namespace mystd {
 
 class OutStream {
 private:
@@ -19,5 +20,7 @@ public:
 const OutStream std_out = OutStream(stdout);
 
 #include "stream.tpp"
+
+}
 
 #endif
