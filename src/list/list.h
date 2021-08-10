@@ -6,7 +6,7 @@
 #define size_t unsigned int
 
 template <typename T>
-class LinkedList {
+class List {
 private:
     struct Node {
         T value;
@@ -20,8 +20,8 @@ private:
     Node *head;
 
 public:
-    LinkedList();
-    LinkedList(const LinkedList<T> &other);
+    List();
+    List(const List<T> &other);
 
     size_t size() const;
     void insert(size_t i, const T &value);

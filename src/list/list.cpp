@@ -4,10 +4,10 @@
 #include "list.h"
 
 int main() {
-    LinkedList<int> list;
+    List<int> list;
     assert(list.size() == 0);
     
-    LinkedList<int> empty_list_copy(list);
+    List<int> empty_list_copy(list);
     assert(empty_list_copy.size() == 0);
 
     int x1 = 42;
@@ -30,7 +30,7 @@ int main() {
     assert(list[1] == x4);
 
     // test copy
-    LinkedList<int> list_copy(list);    // segfault
+    List<int> list_copy(list);    // segfault
     assert(list_copy.size() == list.size());
 
     return 0;
