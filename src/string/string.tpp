@@ -35,3 +35,9 @@ String::~String() {
     if (raw)
         delete[] raw;
 }
+
+String &String::operator=(char *raw) {
+    // todo: make a copy instead
+    this->raw = raw;
+    return *this;
+}

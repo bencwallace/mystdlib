@@ -14,7 +14,7 @@ public:
     String(const char *raw);
     ~String();
 
-    String operator+(const String &other) const;
+    String &operator=(char *);
 };
 
 #include "string.tpp"
