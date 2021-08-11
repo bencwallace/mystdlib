@@ -16,8 +16,6 @@ public:
 
     unsigned int size() const;
 
-    String &operator=(char *);
-
     char  *to_cstring() const;
 };
 
