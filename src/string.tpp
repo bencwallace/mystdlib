@@ -1,9 +1,9 @@
-String::String(): String(0, {}) {}
+String::String(): String("") {}
 
 String::String(const char *raw) {
     size_ = 0;
     const char *ptr = raw;
-    while (ptr) {
+    while (*ptr) {
         ++ptr;
         ++size_;
     }
@@ -18,19 +18,6 @@ String::String(const char *raw) {
         this->raw[i] = raw[i];
 }
 
-String::String(int n, const char *raw) {
-    if (n == 0) {
-        this->raw = nullptr;
-        return;
-    }
-
-    this->raw = new char[n];
-    for (int i = 0; i < n; i++) {
-        this->raw[i] = raw[i];
-        ++size_;
-    }
-}
-
 String::~String() {
     if (raw)
         delete[] raw;
@@ -38,7 +25,7 @@ String::~String() {
 
 unsigned int String::size() const { return size_; }
 
-char *String::to_cstring() const {
+const char *String::to_cstring() const {
     char *copy = new char[size_];
     for (int i = 0; i < size_; ++i)
         copy[i] = raw[i];

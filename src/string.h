@@ -10,13 +10,12 @@ private:
 
 public:
     String();
-    String(int n, const char *raw = {});
     String(const char *raw);
     ~String();
 
     unsigned int size() const;
 
-    char  *to_cstring() const;
+    const char  *to_cstring() const;
 };
 
 #include "string.tpp"

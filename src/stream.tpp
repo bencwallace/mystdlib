@@ -1,9 +1,6 @@
 OutStream::OutStream(FILE *fd): fd(fd) {}
 
-void OutStream::my_write(int n, const char *str) const {
-    write(fileno(fd), str, n);
-}
-
-void OutStream::my_write(const String &s) const {
+OutStream &OutStream::operator<<(const String &s) {
     write(fileno(fd), s.to_cstring(), s.size());
+    return *this;
 }

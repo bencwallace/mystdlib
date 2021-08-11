@@ -15,11 +15,10 @@ private:
 public:
     OutStream(FILE *fd);
 
-    void my_write(int n, const char *) const;
-    void my_write(const String &s) const;
+    OutStream &operator<<(const String &s);
 };
 
-const OutStream std_out = OutStream(stdout);
+OutStream std_out = OutStream(stdout);
 
 #include "stream.tpp"
 
