@@ -5,7 +5,7 @@ namespace mystd {
 
 class String {
 private:
-    int size_ = 0;
+    unsigned int size_ = 0;
     char *raw;
 
 public:
@@ -14,7 +14,11 @@ public:
     String(const char *raw);
     ~String();
 
+    unsigned int size() const;
+
     String &operator=(char *);
+
+    char  *to_cstring() const;
 };
 
 #include "string.tpp"

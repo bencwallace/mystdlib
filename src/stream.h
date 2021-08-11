@@ -4,6 +4,8 @@
 #include <cstdio>
 #include <unistd.h>
 
+#include "string.h"
+
 namespace mystd {
 
 class OutStream {
@@ -13,8 +15,8 @@ private:
 public:
     OutStream(FILE *fd);
 
-    // todo: make this a function of my String
     void my_write(int n, const char *) const;
+    void my_write(const String &s) const;
 };
 
 const OutStream std_out = OutStream(stdout);

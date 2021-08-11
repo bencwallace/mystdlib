@@ -36,8 +36,17 @@ String::~String() {
         delete[] raw;
 }
 
+unsigned int String::size() const { return size_; }
+
 String &String::operator=(char *raw) {
     // todo: make a copy instead
     this->raw = raw;
     return *this;
+}
+
+char *String::to_cstring() const {
+    char *copy = new char[size_];
+    for (int i = 0; i < size_; ++i)
+        copy[i] = raw[i];
+    return copy;
 }
