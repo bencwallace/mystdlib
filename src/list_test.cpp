@@ -29,11 +29,26 @@ int main() {
     int x4 = 44;
     list.insert(1, x4);                 // insert in middle
     assert(list.size() == 3);
-    assert(list[1] == x4);
+    assert(list[1] == x4);              // list should be {11, 44, 32} at this point
 
-    // test copy
-    List<int> list_copy(list);    // segfault
+    List<int> list_copy(list);          // test copy
     assert(list_copy.size() == list.size());
+
+    list_copy.remove(0);                // test remove first element
+    assert(list_copy.size() == 2);
+    assert(list_copy[0] == 44);
+    assert(list.size() == 3);             // test copy really was a copy
+    assert(list[0] == 11);
+
+    list.remove(1);                     // test remove non-first element
+    assert(list.size() == 2);
+    assert(list[0]);
+
+    delete new List<char>;              // test destructor
+
+    List<char> *xs = new List<char>(10, 'x');    // test fill constructor
+    assert(xs->size() == 10);
+    delete xs;                          // test destructor
 
     return 0;
 }

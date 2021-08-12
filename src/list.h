@@ -3,10 +3,6 @@
 
 namespace mystd {
 
-// todo: make namespace to avoid possible clashes with std
-// todo: come up with a better definition
-#define size_t unsigned int
-
 template <typename T>
 class List {
 private:
@@ -16,6 +12,7 @@ private:
 
         Node(const T &value, Node *next = nullptr);
         Node(const Node &other);
+        ~Node() = default;
     };
 
     int size_;
@@ -23,10 +20,13 @@ private:
 
 public:
     List();
+    List(size_t num_copies, const T &val);
     List(const List<T> &other);
+    ~List();
 
     size_t size() const;
     void insert(size_t i, const T &value);
+    void remove(size_t n);
 
     T &operator[](size_t i);
 };

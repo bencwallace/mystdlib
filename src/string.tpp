@@ -23,7 +23,7 @@ String::~String() {
         delete[] raw;
 }
 
-unsigned int String::size() const { return size_; }
+size_t String::size() const { return size_; }
 
 const char *String::to_cstring() const {
     char *copy = new char[size_];
