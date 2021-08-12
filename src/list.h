@@ -1,6 +1,8 @@
 #ifndef MYSTD_LIST_H
 #define MYSTD_LIST_H
 
+#include <initializer_list>
+
 namespace mystd {
 
 template <typename T>
@@ -22,6 +24,7 @@ public:
     List();
     List(size_t num_copies, const T &val);
     List(const List<T> &other);
+    List(std::initializer_list<T> init);
     ~List();
 
     size_t size() const;

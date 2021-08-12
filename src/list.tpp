@@ -46,6 +46,24 @@ List<T>::List(size_t num_copies, const T &val): List() {
 }
 
 template <typename T>
+List<T>::List(std::initializer_list<T> init): List() {
+    if (init.size() == 0)
+        return;
+    
+    Node *node = head;
+    for (auto x: init) {
+        if (!head) {
+            head = new Node(x, nullptr);
+            node = head;
+        } else {
+            node->next = new Node(x, nullptr);
+            node = node->next;
+        }
+        ++size_;
+    }
+}
+
+template <typename T>
 List<T>::~List() {
     Node *prev = nullptr;
     Node *node = head;

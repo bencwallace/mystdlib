@@ -6,5 +6,5 @@ Learning C++ by implementing parts of std.
 
 **Tasks**
 
-* Write `String` to `Stream` by overloading `<<`
 * Add smart pointers
+* Add iterators

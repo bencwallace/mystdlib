@@ -50,5 +50,8 @@ int main() {
     assert(xs->size() == 10);
     delete xs;                          // test destructor
 
+    List<double> special = {0, 3.14, 2.718, 42};
+    assert(special.size() == 4);
+
     return 0;
 }
