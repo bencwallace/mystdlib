@@ -7,14 +7,19 @@ class String {
 private:
     size_t size_ = 0;
     char *raw;
+    using iterator = char*;
 
 public:
     String();
+    String(const String &s);
     String(const char *raw);
+    String(size_t n, char c);
     ~String();
 
-    size_t size() const;
+    iterator begin();
+    iterator end();
 
+    size_t size() const;
     const char *to_cstring() const;
 };
 
