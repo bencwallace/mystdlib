@@ -17,7 +17,7 @@ private:
         ~Node() = default;
     };
 
-    int size_;
+    size_t size_;
     Node *head;
 
 public:

@@ -1,6 +1,8 @@
 CC=g++
-CCFLAGS = -I. -std=c++11
+CCFLAGS = -I. -std=c++11 -pedantic -Wall -Wextra
 
+
+all: list stream string
 
 %: %_test.cpp
 	$(CC) $(CCFLAGS) -o $@_test $<

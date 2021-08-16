@@ -14,7 +14,7 @@ String::String(const char *raw) {
     }
 
     this->raw = new char[size_];
-    for (int i = 0; i < size_; i++)
+    for (size_t i = 0; i < size_; i++)
         this->raw[i] = raw[i];
 }
 
@@ -27,7 +27,7 @@ size_t String::size() const { return size_; }
 
 const char *String::to_cstring() const {
     char *copy = new char[size_];
-    for (int i = 0; i < size_; ++i)
+    for (size_t i = 0; i < size_; ++i)
         copy[i] = raw[i];
     return copy;
 }

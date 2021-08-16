@@ -38,7 +38,7 @@ List<T>::List(size_t num_copies, const T &val): List() {
     ++size_;
 
     Node *node = head;
-    for (int i = 1; i < num_copies; ++i) {
+    for (size_t i = 1; i < num_copies; ++i) {
         node->next = new Node(val, nullptr);
         node = node->next;
         ++size_;
@@ -67,7 +67,7 @@ template <typename T>
 List<T>::~List() {
     Node *prev = nullptr;
     Node *node = head;
-    for (int i = 0; i < size(); ++i) {
+    for (size_t i = 0; i < size(); ++i) {
         prev = node;
         node = node->next;
         delete prev;
@@ -92,7 +92,7 @@ void List<T>::insert(size_t i, const T &value) {
 
     Node *prev = nullptr;
     Node *node = head;
-    for (int j = 0; j < i; j++) {
+    for (size_t j = 0; j < i; j++) {
         prev = node;
         node = node->next;
     }
@@ -108,7 +108,7 @@ void List<T>::remove(size_t n) {
 
     Node *prev = nullptr;
     Node *node = head;
-    for (int i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n; ++i) {
         prev = node;
         node = node->next;
     }
@@ -132,7 +132,7 @@ T &List<T>::operator[](size_t i) {
         throw "List size exceeded.";
 
     Node *node = head;
-    for (int j = 0; j < i; j++)
+    for (size_t j = 0; j < i; j++)
         node = node->next;
 
     return node->value;
