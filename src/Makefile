@@ -12,7 +12,10 @@ all: list stream string
 
 .PHONY: clean test
 
-clean: list-clean stream-clean string-clean
+clean: array-clean list-clean stream-clean string-clean
+
+array-clean:
+	rm -rf array.o array_test
 
 list-clean:
 	rm -rf list.o list_test
