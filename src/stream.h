@@ -13,9 +13,9 @@ private:
     FILE *fd;
 
 public:
-    OutStream(FILE *fd);
+    OutStream(FILE*);
 
-    OutStream &operator<<(const String &s);
+    OutStream &operator<<(const String&);
 };
 
 OutStream std_out = OutStream(stdout);

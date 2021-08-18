@@ -15,7 +15,7 @@ public:
     iterator begin();
     iterator end();
 
-    const T& operator[](size_t i) const;
+    const T& operator[](size_t) const;
 
     size_t size() const;
 

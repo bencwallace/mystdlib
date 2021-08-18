@@ -11,9 +11,9 @@ private:
 
 public:
     String();
-    String(const String &s);
-    String(const char *raw);
-    String(size_t n, char c);
+    String(const String&);
+    String(const char*);
+    String(size_t, char);
     ~String();
 
     iterator begin();
