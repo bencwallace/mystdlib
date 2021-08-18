@@ -1,3 +1,6 @@
+#include <stdexcept>
+
+
 template<typename T>
 List<T>::Node::Node(const T &value, Node *next):
 value(value), next(next) {}
@@ -88,7 +91,7 @@ void List<T>::insert(size_t i, const T &value) {
     }
 
     if (i > size_)
-        throw "List size exceeded.";
+        throw std::out_of_range("List size exceeded.");
 
     Node *prev = nullptr;
     Node *node = head;
@@ -104,7 +107,7 @@ void List<T>::insert(size_t i, const T &value) {
 template <typename T>
 void List<T>::remove(size_t n) {
     if (n >= size())
-        throw "No such element.";
+        throw std::out_of_range("No such element.");
 
     Node *prev = nullptr;
     Node *node = head;
@@ -129,7 +132,7 @@ void List<T>::remove(size_t n) {
 template <typename T>
 T &List<T>::operator[](size_t i) {
     if (i >= size_)
-        throw "List size exceeded.";
+        throw std::out_of_range("List size exceeded.");
 
     Node *node = head;
     for (size_t j = 0; j < i; j++)

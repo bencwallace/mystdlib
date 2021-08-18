@@ -1,5 +1,6 @@
-#include <iostream>
 #include <cassert>
+#include <iostream>
+#include <stdexcept>
 
 #include "list.h"
 
@@ -52,6 +53,11 @@ int main() {
 
     List<double> special = {0, 3.14, 2.718, 42};
     assert(special.size() == 4);
+
+    try {
+        special[4];                     // test out_of_range error is thrown
+        assert(false);
+    } catch (std::out_of_range err) {}
 
     return 0;
 }
